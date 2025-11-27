@@ -1,4 +1,4 @@
-# Santander Dev Week 2023
+# Santander Bootcamp 2025 - Java
 
 ![Java](https://img.shields.io/badge/Java-17-orange?style=flat-square&logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.1.2-brightgreen?style=flat-square&logo=spring)
@@ -6,7 +6,7 @@
 ![Gradle](https://img.shields.io/badge/Gradle-8.0-blue?style=flat-square&logo=gradle)
 ![License](https://img.shields.io/badge/License-Apache%202.0-blue?style=flat-square)
 
-Java RESTful API criada para a Santander Dev Week.
+Java RESTful API criada para o Santander Bootcamp 2025.
 
 ## Principais Tecnologias
 
@@ -120,7 +120,7 @@ cd santander-bootcamp_2025
 
 # Ou compilar e executar
 ./gradlew build
-java -jar build/libs/santander-dev-week-2023-0.0.1-SNAPSHOT.jar
+java -jar build/libs/santander_bootcamp_2025-java-0.0.1-SNAPSHOT.jar
 ```
 
 A aplicação estará disponível em `http://localhost:8080`

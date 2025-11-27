@@ -10,12 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @OpenAPIDefinition(
         info = @Info(
-                title = "Santander Dev Week 2023 API",
+                title = "Santander Bootcamp 2025 Java API",
                 version = "1.0.0",
-                description = "API RESTful para gerenciamento de usuários do Santander Dev Week 2023",
+                description = "API RESTful para gerenciamento de usuários do Santander Bootcamp 2025",
                 contact = @Contact(
-                        name = "Santander Dev Week",
-                        email = "devweek@santander.com"
+                        name = "Santander Bootcamp",
+                        email = "bootcamp@santander.com"
                 ),
                 license = @License(
                         name = "Apache 2.0",
