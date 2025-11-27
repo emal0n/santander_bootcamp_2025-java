@@ -1,41 +1,39 @@
-package me.dio.domain.model;
+package me.dio.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.*;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import me.dio.domain.model.Account;
+import me.dio.domain.model.Card;
+import me.dio.domain.model.Feature;
+import me.dio.domain.model.News;
 
 import java.util.List;
 
-@Entity(name = "tb_user")
-@Schema(description = "Modelo de usuário")
-public class User {
+@Schema(description = "DTO para criação de usuário")
+public class UserRequestDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Schema(description = "ID do usuário", example = "1")
-    private Long id;
-
-    @Schema(description = "Nome do usuário", example = "João Silva")
+    @Schema(description = "Nome do usuário", example = "João Silva", required = true)
+    @NotBlank(message = "Name is required")
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @Schema(description = "Conta do usuário", required = true)
+    @NotNull(message = "Account is required")
+    @Valid
     private Account account;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @Schema(description = "Cartão do usuário")
+    @Valid
     private Card card;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Schema(description = "Lista de funcionalidades")
+    @Valid
     private List<Feature> features;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Schema(description = "Lista de notícias")
+    @Valid
     private List<News> news;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -76,5 +74,5 @@ public class User {
     public void setNews(List<News> news) {
         this.news = news;
     }
-
 }
+

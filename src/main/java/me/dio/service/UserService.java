@@ -1,10 +1,19 @@
 package me.dio.service;
 
-import me.dio.domain.model.User;
+import me.dio.dto.UserRequestDTO;
+import me.dio.dto.UserResponseDTO;
+
+import java.util.List;
 
 public interface UserService {
 
-    User findById(Long id);
+    UserResponseDTO findById(Long id);
 
-    User create(User userToCreate);
+    List<UserResponseDTO> findAll();
+
+    UserResponseDTO create(UserRequestDTO userToCreate);
+
+    UserResponseDTO update(Long id, UserRequestDTO userToUpdate);
+
+    void delete(Long id);
 }

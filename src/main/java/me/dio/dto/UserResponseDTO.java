@@ -1,32 +1,32 @@
-package me.dio.domain.model;
+package me.dio.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.*;
+import me.dio.domain.model.Account;
+import me.dio.domain.model.Card;
+import me.dio.domain.model.Feature;
+import me.dio.domain.model.News;
 
 import java.util.List;
 
-@Entity(name = "tb_user")
-@Schema(description = "Modelo de usuário")
-public class User {
+@Schema(description = "DTO para resposta de usuário")
+public class UserResponseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Schema(description = "ID do usuário", example = "1")
     private Long id;
 
     @Schema(description = "Nome do usuário", example = "João Silva")
     private String name;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @Schema(description = "Conta do usuário")
     private Account account;
 
-    @OneToOne(cascade = CascadeType.ALL)
+    @Schema(description = "Cartão do usuário")
     private Card card;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Schema(description = "Lista de funcionalidades")
     private List<Feature> features;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @Schema(description = "Lista de notícias")
     private List<News> news;
 
     public Long getId() {
@@ -76,5 +76,5 @@ public class User {
     public void setNews(List<News> news) {
         this.news = news;
     }
-
 }
+
